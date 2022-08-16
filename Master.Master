@@ -1,0 +1,58 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Master.master.cs" Inherits="proyecto1VanessaAlvaradoS.Master" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataSourceID="SqlDataSource2" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" Width="324px">
+            <Columns>
+                <asp:BoundField DataField="total" HeaderText="total" ReadOnly="True" SortExpression="total" />
+            </Columns>
+        </asp:GridView>
+        <asp:SqlDataSource ID="SqlDataSource2" runat="server" ConnectionString="<%$ ConnectionStrings:UHPRESUPUESTOConnectionString %>" SelectCommand="ConsultaFiltro" SelectCommandType="StoredProcedure">
+            <SelectParameters>
+                <asp:Parameter Name="tipotransaccion" Type="Int32" />
+                <asp:Parameter Name="usuario" Type="String" />
+                <asp:Parameter Name="mes" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <br />
+        <br />
+        mes<br />
+        usuario
+        <br />
+        tipo<br />
+&nbsp;&nbsp;&nbsp;&nbsp; reporte
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        tipotransaccion:<br />
+        <br />
+        email:
+        <br />
+        <br />
+        Descripcion:<br />
+        <br />
+        monto:<br />
+        <br />
+        fecha:<br />
+        <br />
+    </form>
+</body>
+</html>
